@@ -1,0 +1,20 @@
+interactive-avatar {
+    button {
+        width: 55px!important;
+        height: 55px!important;
+        margin: 0px!important;
+        border-radius: 50%!important;
+        background-color: rgba($color: gray, $alpha: 0.4)!important;
+        ion-icon {
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translateX(-50%) translateY(-50%);
+            font-size: 2.7rem;
+            color: color($colors, primary)!important;
+        }
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

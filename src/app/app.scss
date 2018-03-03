@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,213 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-header {
+    background: color($colors, primary);
+    background: -webkit-linear-gradient(color($colors, primary), color($colors, primaryLight))!important;
+    background: linear-gradient(color($colors, primary), color($colors, primaryLight))!important;
+    ion-navbar {
+        .toolbar-background {
+            background: none;
+        }
+        text-align: center;
+        font-variant: small-caps;
+    }
+    ion-navbar:nth-child(2).toolbar {
+        min-height: 30px!important;
+        overflow: visible;
+        contain: unset;
+        padding: 0px!important;
+        box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.6);
+        ion-slides {
+            z-index: 1000;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100px;
+            // .swiper-wrapper {
+            //     position: absolute!important;
+            //     width: 100%!important;
+            // }
+            ion-slide {
+                position: relative;
+                width: 280px !important;
+                height: 100px!important;
+                .slide-zoom {
+                    .card {
+                        position: absolute;
+                        width: 260px;
+                        left: 10px;
+                        transition: transform 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+        .card {
+            z-index: 1000;
+            position: absolute;
+            top: 0%;
+            width: 78%;
+            max-width: 380px;
+            min-width: 180px;
+            height: 92px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-7px);
+            border-radius: 4px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16), 0 1px 1px rgba(0, 0, 0, 0.1);
+            background: white;
+            ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-flow: wrap;
+                list-style-type: none;
+                align-items: center;
+                justify-content: center;
+                margin: 0px;
+                li {
+                    flex: 1;
+                }
+                [points] {
+                    font-size: 1.9em;
+                    span {
+                        font-size: 0.8em;
+                        font-weight: bolder;
+                        color: rgba($color: grey, $alpha: 0.8)
+                    }
+                }
+                li:nth-child(2) {
+                    text-align: end;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+ion-menu {
+    ion-content {
+        .scroll-content {
+            display: flex;
+            flex-direction: column;
+            // width: 100vw;
+            height: 100vh;
+            text-align: center;
+            justify-content: space-between;
+            .header {
+                position: relative;
+                height: 100px;
+                background: color($colors, primary);
+                background: -webkit-linear-gradient(color($colors, primary), color($colors, primaryLight))!important;
+                background: linear-gradient(color($colors, primary), color($colors, primaryLight))!important;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                svg {
+                    position: absolute;
+                    bottom: -25px;
+                    left: 0px;
+                    fill: #87b2f6;
+                }
+                .avatar {
+                    position: absolute;
+                    display: inline-block;
+                    left: 12px;
+                    top: 12px;
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    border: 2px solid color($colors, secondary);
+                    overflow: hidden;
+                }
+                .avatarInfo {
+                    position: absolute;
+                    left: 106px;
+                    top: 65px;
+                    ion-label {
+                        position: absolute;
+                        margin: 0;
+                        top: 50%;
+                        font-variant: small-caps;
+                        font-weight: bold;
+                    }
+                    ion-label:nth-child(1) {
+                        transform: translateY(-120%);
+                        font-size: 1.2em;
+                    }
+                    ion-label:nth-child(2) {
+                        transform: translateY(-5px) translateX(5px);
+                        font-size: 1.2em;
+                    }
+                    ion-label:nth-child(3) {
+                        transform: translateY(120%) translateX(-4px);
+                        color: rgba(0, 0, 0, 0.75);
+                    }
+                }
+                button {
+                    position: absolute;
+                    top: 8px;
+                    right: -2px;
+                    ion-icon {
+                        color: black;
+                    }
+                }
+            }
+            .body {
+                position: absolute;
+                top: 145px;
+                bottom: 0px;
+                width: 100%;
+                ion-list {
+                    button {
+                        font-variant: small-caps;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        ion-footer {
+            small {
+                font-size: 1.45rem;
+                color: rgba($color: gray, $alpha: 0.9);
+                font-variant: small-caps;
+                font-weight: bold;
+                img {
+                    transform: translateY(3px)!important;
+                }
+            }
+        }
+    }
+}
+
+ion-header::after {
+    background-image: none!important;
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+*::-webkit-scrollbar-thumb {
+    visibility: hidden;
+}
+
+button#menuButton {
+    z-index: 10;
+    position: absolute!important;
+    left: 10px;
+    top: 4px;
+    height: 40px;
+    width: 35px;
+    color: white;
+    ion-icon {
+        font-size: 3.5rem;
+    }
+}

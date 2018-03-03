@@ -1,0 +1,6 @@
+<div class="scroll">
+    <div class="flex-container">
+        <button overlay ion-button round small></button>
+        <button id="item{{index}}" (click)="click(index+1)" [attr.selected]="selectedIndex == index?'':null" *ngFor="let item of data;let index = index" ion-button round small>{{item}}</button>
+    </div>
+</div>

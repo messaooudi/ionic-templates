@@ -1,0 +1,11 @@
+<div *ngIf="active" class="container" [@animation]>
+    <div class="color-1" (click)="color = 'red';active=false"></div>
+    <div class="color-2" (click)="color = 'blue';active=false"></div>
+    <div class="color-3" (click)="color = 'green';active=false"></div>
+    <div class="color-4" (click)="color = 'yellow';active=false"></div>
+    <button ion-button small (click)="active = !active">
+        <ion-icon  name="ios-close" ></ion-icon>
+    </button>
+</div>
+<button [ngClass]="color" *ngIf="!active" class="picked" (click)="active = !active">
+</button>

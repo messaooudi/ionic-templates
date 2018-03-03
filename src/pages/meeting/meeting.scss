@@ -1,0 +1,55 @@
+page-meeting {
+    ion-content {
+        .scroll-content {
+            padding-top: 60px!important;
+            ion-row {
+                margin-top: 4px;
+            }
+            interactive-avatar {
+                display: inline-block;
+                margin: 2px;
+            }
+            my {
+                position: absolute;
+                right: 0px;
+            }
+            priority-picker {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(50%) translateY(-50%);
+            }
+            ion-col {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .justify-left {
+                text-align: left;
+            }
+            .justify-center {
+                text-align: center;
+            }
+            .justify-right {
+                text-align: right;
+                float: right;
+            }
+            ion-label {
+                font-size: 1.8rem;
+                font-weight: bolder;
+                color: rgba($color: gray, $alpha: 0.8)
+            }
+            ion-input {
+                font-size: 1.8rem;
+                font-weight: bolder;
+                color: black;
+                .text-input {
+                    margin-left: 5px;
+                }
+            }
+            ion-icon {
+                color: rgba($color: gray, $alpha: 0.8)
+            }
+        }
+    }
+}

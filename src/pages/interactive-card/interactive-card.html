@@ -1,0 +1,20 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Interactive Card</ion-title>
+    </ion-navbar>
+    <ion-navbar>
+        <ion-slides centeredSlides="true" [spaceBetween]="-30" [slidesPerView]="'auto'">
+            <ion-slide *ngFor="let l of languages;let i = index">
+                <card [language]="l.language" [rates]="l.rates" rates={} class="card" [style.transform]="i == slides.getActiveIndex()?'scale(1)':'scale(0.8)'">
+                </card>
+            </ion-slide>
+        </ion-slides>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding [@animation]>
+    <movie-card *ngFor="let movie of movies" [movie]="movie"></movie-card>
+</ion-content>

@@ -1,0 +1,14 @@
+card {
+    ion-grid {
+        ion-row.header {
+            height: 30px;
+        }
+    }
+    small.rate {
+        color: rgba($color: gray, $alpha: 0.7);
+        font-size: 1.2rem;
+    }
+    span {
+        font-size: 1.15rem;
+    }
+}

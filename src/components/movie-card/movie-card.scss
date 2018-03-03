@@ -1,0 +1,105 @@
+movie-card {
+    display: block;
+    div.container {
+        font-variant: small-caps;
+        font-size: 15px!important;
+        margin-top: 50px;
+        min-height: 140px;
+        min-width: 210px;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16), 0 1px 1px rgba(0, 0, 0, 0.1);
+        background: rgba($color: rgb(26, 22, 39), $alpha: 0.04);
+        transition: all 0.3s ease-in;
+        ion-grid.main {
+            .first-row {
+                height: 130px;
+            }
+            div.movie-img {
+                border-radius: 13px;
+                height: 160px;
+                max-width: 180px;
+                min-width: 110px;
+                background-color: transparent;
+                transform: translateY(-40px);
+                background-image: url('../assets/imgs/movie-img.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            ul.movie-infos {
+                list-style-type: none;
+                margin: 0px!important;
+                padding: 0px!important;
+                padding-left: 7px!important;
+                li {
+                    margin-bottom: 7px!important;
+                }
+                li:last-child {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 8px!important;
+                }
+                ion-label#movie-title {
+                    margin: 0px!important;
+                    font-weight: bold;
+                    font-size: 1.8rem;
+                }
+                small#movie-categories {
+                    margin: 0px!important;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                    color: rgba($color: black, $alpha: 0.6)
+                }
+                div.movie-likes {
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+                    font-size: 1.8rem;
+                    svg {
+                        //flex: 1;
+                        height: 25px;
+                    }
+                    span {
+                        margin-left: 5px;
+                        color: rgba($color: gray, $alpha: 0.8)
+                    }
+                }
+            }
+        }
+        div.more {
+            margin-top: 5px;
+            div.when {
+                margin-top: 25px!important;
+                //margin-left: 10px!important;
+            }
+            div.when::before {
+                position: absolute;
+                transform: translateY(-20px);
+                font-weight: bold;
+                content: "When";
+            }
+            div.show-time {
+                margin-top: 25px!important;
+                //margin-left: 10px!important;
+            }
+            div.show-time::before {
+                position: absolute;
+                transform: translateY(-20px);
+                font-weight: bold;
+                content: "Show time";
+            }
+        }
+        div.movie-seats::before {
+            position: absolute;
+            transform: translateY(-20px);
+            font-weight: bold;
+            content: "Seats";
+        }
+        button.show-more {
+            flex: 0 0 auto;
+            float: right;
+            font-size: 1.2rem;
+            font-variant: small-caps;
+            text-transform: none;
+        }
+    }
+}

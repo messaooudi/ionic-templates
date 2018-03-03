@@ -1,1 +1,32 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="myContent">
+    <ion-content>
+        <div class="header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="310" height="40" viewBox="10 10 250 350" preserveAspectRatio="none">    
+                        <path id="curve" d="M0,0 C0,400 184,375 409,0"  />
+                    </svg>
+            <div class="avatar">
+                <img src="assets/imgs/peoples/06.png" width="90px" height="90px">
+            </div>
+            <div class="avatarInfo">
+                <ion-label>MEGHRAOUI</ion-label>
+                <ion-label>Ikbal</ion-label>
+                <!-- /<ion-label>woodstock.john@gmail.com</ion-label> -->
+            </div>
+        </div>
+        <div class="body">
+            <ion-list>
+                <button ion-item (click)="openPage(page)" *ngFor="let page of pages">
+                        <ion-icon name="{{page.icon}}" item-start></ion-icon>
+                        {{page.title}}
+                    </button>
+            </ion-list>
+        </div>
+        <ion-footer>
+            <small>Made with <span style="color : red">❤</span> and lots of coffee <img src="assets/imgs/coffee-cup.png"></small>
+        </ion-footer>
+    </ion-content>
+</ion-menu>
+<button id="menuButton" ion-button clear (click)="menu.toggle()">
+        <ion-icon name="md-menu"></ion-icon>
+</button>
+<ion-nav #myContent [root]="rootPage" swipeBackEnabled="false"></ion-nav>

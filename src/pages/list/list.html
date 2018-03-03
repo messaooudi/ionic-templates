@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+
+        <ion-title>Items List</ion-title>
+    </ion-navbar>
+    <ion-navbar>
+        <ion-slides centeredSlides="true" [spaceBetween]="-30" [slidesPerView]="'auto'">
+            <ion-slide *ngFor="let l of languages;let i = index">
+                <card [language]="l.language" [rates]="l.rates" rates={} class="card" [style.transform]="i == slides.getActiveIndex()?'scale(1)':'scale(0.8)'">
+                </card>
+            </ion-slide>
+        </ion-slides>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list [@animation]>
+
+        <ion-list-header>Today</ion-list-header>
+        <avatar-list-item></avatar-list-item>
+        <avatar-list-item></avatar-list-item>
+
+    </ion-list>
+
+    <ion-list [@animation]>
+
+        <ion-list-header>Yesterday</ion-list-header>
+        <avatar-list-item></avatar-list-item>
+        <avatar-list-item></avatar-list-item>
+        <avatar-list-item></avatar-list-item>
+
+    </ion-list>
+
+    <ion-list [@animation]>
+
+        <ion-list-header>Last week</ion-list-header>
+        <avatar-list-item></avatar-list-item>
+        <avatar-list-item></avatar-list-item>
+        <avatar-list-item></avatar-list-item>
+        <avatar-list-item></avatar-list-item>
+        <avatar-list-item></avatar-list-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,28 @@
+<my [data]="types" [default]="0" (select)="changeType($event)"></my>
+<div class="container">
+    <ion-grid class="left">
+        <ion-row *ngFor="let a of ' '.repeat(leftSeats.rows).split('');let r = index">
+            <ion-col *ngFor="let b of ' '.repeat(leftSeats.columns).split('');let c = index">
+                <span [attr.selected]="state[r][c]?type:null" class="circle"></span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid class="middle">
+        <ion-row *ngFor="let a of ' '.repeat(middleSeats.rows).split('');let r = index">
+            <ion-col *ngFor="let b of ' '.repeat(middleSeats.columns).split('');let c = index">
+                <span [attr.selected]="state[r][c+leftSeats.columns]?type:null" class="circle"></span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid class="right">
+        <ion-row *ngFor="let a of ' '.repeat(rightSeats.rows).split('');let r = index">
+            <ion-col *ngFor="let b of ' '.repeat(rightSeats.columns).split('');let c = index">
+                <span [attr.selected]="state[r][c+leftSeats.columns+middleSeats.columns]?type:null" class="circle"></span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</div>
+<br>

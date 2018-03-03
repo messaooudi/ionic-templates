@@ -1,0 +1,79 @@
+priority-picker {
+    max-width: 0px!important;
+    .container {
+        position: absolute;
+        margin-left: -30px;
+        margin-top: -40px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: transparent;
+        transform: rotate(45deg);
+        div.color-1 {
+            position: absolute;
+            right: 0px;
+            width: 40px;
+            height: 40px;
+            background-color: #ff0000;
+            //border-top-left-radius: 50%;
+            border-top-right-radius: 100%;
+        }
+        div.color-2 {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #0089ff;
+            border-top-left-radius: 100%;
+        }
+        div.color-3 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            width: 40px;
+            height: 40px;
+            background-color: #00d800;
+            border-bottom-right-radius: 100%;
+        }
+        div.color-4 {
+            position: absolute;
+            bottom: 0px;
+            width: 40px;
+            height: 40px;
+            background-color: #ffba00;
+            border-bottom-left-radius: 100%;
+        }
+        button {
+            position: absolute;
+            margin: 0px;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: white;
+            ion-icon {
+                font-size: 2.8rem!important;
+            }
+        }
+    }
+    button.picked {
+        width: 20px!important;
+        height: 20px!important;
+        margin: 0px;
+        border-radius: 50%;
+    }
+    .red {
+        background-color: #ff0000;
+    }
+    .green {
+        background-color: #00d800!important;
+    }
+    .blue {
+        background-color: #0089ff;
+    }
+    .yellow {
+        background-color: #ffba00;
+    }
+}

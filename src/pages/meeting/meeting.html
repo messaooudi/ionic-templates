@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+                  <ion-icon name="menu" style="color : white"></ion-icon>
+                </button>
+        <ion-title>Meeting</ion-title>
+    </ion-navbar>
+    <ion-navbar>
+        <ion-slides centeredSlides="true" [spaceBetween]="-30" [slidesPerView]="'auto'">
+            <ion-slide *ngFor="let l of languages;let i = index">
+                <card [language]="l.language" [rates]="l.rates" rates={} class="card" [style.transform]="i == slides.getActiveIndex()?'scale(1)':'scale(0.8)'">
+                </card>
+            </ion-slide>
+        </ion-slides>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list [@animation]>
+        <ion-input type="text" placeholder="Heading"></ion-input>
+        <ion-row justify-content-center>
+            <ion-col class="justify-left" (click)="setStartDate()">
+                <button *ngIf="!startDate" ion-button clear>Start</button>
+                <ion-label *ngIf="startDate">{{startDate?.toLocaleDateString()}}<br><small>{{startDate.toLocaleTimeString()}}</small></ion-label>
+            </ion-col>
+            <ion-col class="justify-center">
+                <ion-icon name='md-arrow-round-forward'></ion-icon>
+            </ion-col>
+            <ion-col class="justify-right" (click)="setEndDate()">
+                <button *ngIf="!endDate" ion-button clear>End</button>
+                <ion-label *ngIf="endDate">{{endDate?.toLocaleDateString()}}<br><small>{{endDate.toLocaleTimeString()}}</small></ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="justify-left">
+                <ion-label>Priority</ion-label>
+            </ion-col>
+            <ion-col col-8 class="justify-center">
+                <priority-picker></priority-picker>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="justify-left">
+                <ion-label>Alert before</ion-label>
+            </ion-col>
+            <ion-col col-7 class="justify-right">
+                <my [data]="['5min','10min']"></my>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="justify-left">
+                <ion-label>Location</ion-label>
+            </ion-col>
+            <ion-col col-8 class="justify-right">
+                <my [data]="['Board room','Cafeteria']"></my>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12 class="justify-left">
+                <ion-label>People</ion-label>
+            </ion-col>
+            <ion-col>
+                <div class="people">
+                    <interactive-avatar [img]="'assets/imgs/peoples/01.png'"></interactive-avatar>
+                    <interactive-avatar [img]="'assets/imgs/peoples/02.png'"></interactive-avatar>
+                    <interactive-avatar [img]="'assets/imgs/peoples/03.png'"></interactive-avatar>
+                    <interactive-avatar [img]="'assets/imgs/peoples/04.png'"></interactive-avatar>
+                    <interactive-avatar [img]="'assets/imgs/peoples/05.png'"></interactive-avatar>
+                    <interactive-avatar [img]="'assets/imgs/peoples/06.png'"></interactive-avatar>
+                    <interactive-avatar [img]="'assets/imgs/peoples/07.png'"></interactive-avatar>
+                    <interactive-avatar [img]="'assets/imgs/peoples/08.png'"></interactive-avatar>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-list>
+</ion-content>
